@@ -10,20 +10,20 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "antd-mobile": "^5.35.0",
+    "antd-mobile": "^5.36.1",
     "antd-mobile-icons": "^0.3.0",
-    "dayjs": "^1.11.10",
-    "firebase": "^10.10.0",
+    "dayjs": "^1.11.11",
+    "firebase": "^10.12.2",
     "image-resize-compress": "^1.1.0",
-    "next": "^14.1.4",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "^14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.12.5",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
-    "sass": "^1.74.1",
-    "typescript": "^5.4.4"
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "sass": "^1.77.5",
+    "typescript": "^5.4.5"
   }
 }
