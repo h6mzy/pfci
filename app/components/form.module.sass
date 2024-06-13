@@ -1,0 +1,48 @@
+.center
+  :global
+    .adm-list-item
+      padding-left: 0
+    .adm-list-item-content
+      padding-right: 0
+
+.center:not(.editing),
+.borderTopTransparent
+  :global
+    .adm-list-item-content
+      border-top: 1px solid transparent
+
+.uploader
+  :global .adm-space
+    > .adm-space-item
+      width: 100%
+      margin-right: 0
+      padding-bottom: 0
+
+.avatar
+  :global 
+    .adm-image
+      border-radius: var(--avatar-radius)
+    .adm-image-uploader-cell-delete
+      width: 24px
+      height: 24px
+      font-size: 16px
+      border-radius: 8px
+      display: flex
+      justify-content: center
+      align-items: center
+
+.deleteBoundry
+  position: relative
+  padding: var(--adm-gap-sm) var(--adm-gap-sm) 0 0
+
+.delete
+  position: absolute
+  top: 0
+  right: 0
+  border-radius: 5px
+
+@media (min-width: 480px)
+  .btnContainer
+    max-width: 375px
+    display: block
+    margin: auto
