@@ -1,12 +1,14 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { Button, List, Popup, Space, TabBar, Tabs } from 'antd-mobile'
+import { Button, Card, Image, List, Popup, Space, TabBar, Tabs } from 'antd-mobile'
 import Link from 'next/link'
 import styles from './navbar.module.sass'
 import { CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, MoreOutline, TeamOutline, UserCircleOutline } from 'antd-mobile-icons'
 import { useState } from 'react'
 import { UserAuth } from '../_lib/auth-context'
+import Countdown from 'react-countdown'
+import Affix from '@uiw/react-affix'
 
 const Navbar = () => {
 
@@ -29,7 +31,7 @@ const Navbar = () => {
   const Logo = () => (
     <Link href='/' onClick={() => setVisible(false)}>
       <Button fill='none' color='primary' className={styles.height}>
-        <strong>GO</strong>
+        <Image src='/images/clubs/PFC.webp' width={70} height={70} />
       </Button>
     </Link>
   )
@@ -58,38 +60,12 @@ const Navbar = () => {
       <div className={styles.top}>
         <Space justify='between' block className='align-stretch'>
           <Logo />
-          <>
-            <Tabs
-              defaultActiveKey={null}
-              activeKey={activeKey}
-              className={`tabs-borderless ${styles.tabs}`}
-            >
-              {navItems.map(tab =>
-                <Tabs.Tab
-                  key={tab.key}
-                  title={<TabLink href={`/${tab.key}`} title={tab.title} />}
-                  className={`${styles.height} ${styles.tab}`}
-                />
-              )}
-            </Tabs>
-            <Link href='/user'>
-              <Button fill='none' className={styles.height}>
-                <UserCircleOutline fontSize={iconSize} color='var(--adm-color-weak)' />
-              </Button>
-            </Link>
-            <Button
-              fill='none'
-              color='primary'
-              onClick={() => setVisible(true)}
-              className={`hide-on-lg ${styles.height}`}
-            >
-              <MoreOutline
-                fontSize={iconSize}
-                color='var(--adm-color-weak)'
-                className={styles.more}
-              />
-            </Button>
-          </>
+          <Card>
+            KICK OFF
+            <Affix offsetTop={10}>
+              <div><Countdown date={`2024-06-15T18:00:00`} /></div>
+            </Affix>
+          </Card>
         </Space>
       </div>
       <div className={styles.btm}>

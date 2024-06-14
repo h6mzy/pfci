@@ -12,6 +12,7 @@ export default function Home() {
     <main>
       <div className='pad'>
         <LineUp players={players} />
+        <div style={{ background: '#000', height: '200vh' }} />
       </div>
     </main>
   )
