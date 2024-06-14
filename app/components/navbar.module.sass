@@ -1,7 +1,10 @@
 .top
-  height: var(--nav-height)
-  display: flex
-  align-items: stretch
+  :global
+    .adm-space-item:nth-child(2)
+      flex: 1
+      display: flex
+      justify-content: center
+      align-item: center
 
 .link
   text-decoration: none

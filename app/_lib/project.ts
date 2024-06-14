@@ -1,4 +1,4 @@
 export const project_details = {
-  title: 'GoFootball',
+  title: 'PFC International',
   email: 'gofootball@gmail.com'
 }

@@ -4,8 +4,8 @@ import { usePathname } from 'next/navigation'
 import { Button, Card, Image, List, Popup, Space, TabBar, Tabs } from 'antd-mobile'
 import Link from 'next/link'
 import styles from './navbar.module.sass'
-import { CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, MoreOutline, TeamOutline, UserCircleOutline } from 'antd-mobile-icons'
-import { useState } from 'react'
+import { AppOutline, CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, MoreOutline, TeamOutline, UserCircleOutline, UserOutline } from 'antd-mobile-icons'
+import { useEffect, useState } from 'react'
 import { UserAuth } from '../_lib/auth-context'
 import Countdown from 'react-countdown'
 import Affix from '@uiw/react-affix'
@@ -16,6 +16,13 @@ const Navbar = () => {
   const activeKey = pathname.split('/').filter(n => n)[0] || ''
 
   const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      'data-prefers-color-scheme',
+      'dark',
+    )
+  }, [])
 
   const TabLink = ({ href, title }: { href: string, title: string }) => (
     <Link className={styles.link} href={href}>{title}</Link>
@@ -31,7 +38,7 @@ const Navbar = () => {
   const Logo = () => (
     <Link href='/' onClick={() => setVisible(false)}>
       <Button fill='none' color='primary' className={styles.height}>
-        <Image src='/images/clubs/PFC.webp' width={70} height={70} />
+        <Image src='/images/clubs/PFC.webp' width={60} height={60} />
       </Button>
     </Link>
   )
@@ -57,16 +64,19 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={styles.top}>
-        <Space justify='between' block className='align-stretch'>
+      <div>
+        <Space block justify='between' align='center' className={styles.top}>
+          <AppOutline fontSize={24} />
           <Logo />
+          <UserOutline fontSize={22} />
+        </Space>
+        </div><div>
           <Card>
             KICK OFF
             <Affix offsetTop={10}>
               <div><Countdown date={`2024-06-15T18:00:00`} /></div>
             </Affix>
           </Card>
-        </Space>
       </div>
       <div className={styles.btm}>
         <TabBar className={styles.tabbar}>
