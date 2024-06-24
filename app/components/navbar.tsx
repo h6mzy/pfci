@@ -59,14 +59,20 @@ const Navbar = () => {
   ]
 
   const timeRenderer = ({ days, hours, minutes, seconds }: any) => (
-    <Space block justify='stretch' className={styles.countdown} style={{ '--gap-horizontal': '0px' }}>
-      <span>{zeroPad(days)}</span>
+    <Space
+      block
+      justify='stretch'
+      align='center'
+      className={styles.countdown}
+      style={{ '--gap-horizontal': '0px' }}
+    >
+      <span><strong>{zeroPad(days)}</strong><small>DAYS</small></span>
       <span>:</span>
-      <span>{zeroPad(hours)}</span>
+      <span><strong>{zeroPad(hours)}</strong><small>HOURS</small></span>
       <span>:</span>
-      <span>{zeroPad(minutes)}</span>
+      <span><strong>{zeroPad(minutes)}</strong><small>MINUTES</small></span>
       <span>:</span>
-      <span>{zeroPad(seconds)}</span>
+      <span><strong>{zeroPad(seconds)}</strong><small>SECONDS</small></span>
     </Space>
   )
 

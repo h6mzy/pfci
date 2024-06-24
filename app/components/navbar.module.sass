@@ -28,8 +28,15 @@
 
 .countdown
   box-sizing: border-box
-  font-weight: bold
-  font-size: 1.6rem
+  line-height: 1
+  text-align: center
+  strong
+    font-weight: bold
+    font-size: 1.6rem
+    display: block
+  small
+    font-size: .7rem
+    color: var(--adm-color-weak)
   :global
     .adm-space-item
       flex: 1
@@ -61,7 +68,7 @@
   bottom: 0
   left: 0
   right: 0
-  background: var(--adm-color-white)
+  background: var(--adm-color-primary)
   z-index: 9
 
 .tabbar
@@ -69,11 +76,12 @@
   :global
     .adm-tab-bar-item 
       a
-        color: var(--adm-color-weak)
+        color: var(--adm-color-black)
+        opacity: .4
         &:hover, &:active
-          color: var(--adm-color-primary)
+          opacity: 1
     .adm-tab-bar-item-active a
-      color: var(--adm-color-primary)
+      opacity: 1
 
 .tabs
   display: none

@@ -1,19 +1,30 @@
 'use client'
 
-import { Button, Grid, Image, Space } from 'antd-mobile'
-import { project_details } from './_lib/project'
-import Link from 'next/link'
-import Stat from './components/stat'
-import LineUp from './components/lineup'
+import { List } from 'antd-mobile'
 import { players } from './_lib/players'
+import styles from './components/lineup.module.sass'
+import PlayerCard from './components/player-card'
 
 export default function Home() {
   return (
     <main>
-      <div className='pad'>
-        <LineUp players={players} />
-        <div style={{ background: '#000', height: '200vh' }} />
-      </div>
+      <List
+        className={styles.lineup}
+        style={{ 
+          '--border-top': '0px',
+          '--border-bottom': '0px',
+          '--padding-left': '0px',
+          '--padding-right': '0px',
+        }}
+      >
+        {players.map((player, playerIndex) => {
+          return (
+            <List.Item key={playerIndex}>
+              <PlayerCard player={player} />
+            </List.Item>
+          )
+        })}
+      </List>
     </main>
   )
 }
