@@ -1,10 +1,43 @@
+.bar
+  background-color: var(--adm-color-black)
+  height: var(--nav-height)
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: stretch
+
 .top
+  box-sizing: border-box
+  padding: 0 var(--adm-gap)
   :global
     .adm-space-item:nth-child(2)
       flex: 1
       display: flex
       justify-content: center
       align-item: center
+
+.countdownBar
+  box-sizing: border-box
+  padding: 0 var(--adm-gap)
+  :global
+    .adm-space-item:nth-child(2)
+      flex: 1
+      display: flex
+      justify-content: center
+      align-item: center
+
+.countdown
+  box-sizing: border-box
+  font-weight: bold
+  font-size: 1.6rem
+  :global
+    .adm-space-item
+      flex: 1
+      display: flex
+      justify-content: center
+      align-item: center
+    .adm-space-item:nth-child(odd)
+      flex: 2
 
 .link
   text-decoration: none
