@@ -10,7 +10,7 @@ export interface Player {
 export const players: Player[] = [
   {
     squad_number: 1,
-    name: 'Mavie',
+    name: 'Mavz',
     country: 'PH',
     role: 'Defence',
     position: 'Goalkeeper',
