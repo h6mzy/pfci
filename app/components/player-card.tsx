@@ -1,10 +1,9 @@
 'use client'
 
-import { Image, List, Space } from 'antd-mobile'
+import { Image, Space } from 'antd-mobile'
 import styles from './player.module.sass'
 import { Player } from '../_lib/players'
 import FixedAspectRatio from './fixed-aspect-ratio'
-import { countries } from 'country-flag-icons'
 
 export interface PlayerCardProps {
   player: Player

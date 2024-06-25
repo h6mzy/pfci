@@ -1,10 +1,10 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { Button, Card, Image, List, Popup, Space, TabBar, Tabs } from 'antd-mobile'
+import { Button, Image, List, Popup, Space, TabBar } from 'antd-mobile'
 import Link from 'next/link'
 import styles from './navbar.module.sass'
-import { AppOutline, CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, MoreOutline, TeamOutline, UserCircleOutline, UserOutline } from 'antd-mobile-icons'
+import { AppOutline, CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, TeamOutline, UserOutline } from 'antd-mobile-icons'
 import { useEffect, useState } from 'react'
 import { UserAuth } from '../_lib/auth-context'
 import Countdown, { zeroPad } from 'react-countdown'
