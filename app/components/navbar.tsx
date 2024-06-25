@@ -78,34 +78,32 @@ const Navbar = () => {
 
   return (
     <>
-      <div>
-        <Space
-          block
-          justify='between'
-          align='center'
-          className={`${styles.bar} ${styles.top}`}
-        >
-          <AppOutline fontSize={24} onClick={() => setVisible(true)} />
-          <Logo />
-          <UserOutline fontSize={22} />
-        </Space>
+      <Space
+        block
+        justify='between'
+        align='center'
+        className={`${styles.bar} ${styles.top}`}
+      >
+        <AppOutline fontSize={24} onClick={() => setVisible(true)} />
+        <Logo />
+        <UserOutline fontSize={22} />
+      </Space>
+      <Affix offsetTop={0}>
+        <div className={styles.bar}>
+          <Space
+            block
+            align='center'
+            className={styles.countdownBar}
+            style={{ '--gap-horizontal': 'var(--adm-gap)' }}
+          >
+            <div className='text-center'>
+              <div><small>Kick off</small></div>
+              <Image src='/images/time_sponsor.webp' width={100} height='auto' />
+            </div>
+            <Countdown date={`2024-06-29T18:00:00`} renderer={timeRenderer} />
+          </Space>
         </div>
-        <Affix offsetTop={0}>
-          <div className={styles.bar}>
-            <Space
-              block
-              align='center'
-              className={styles.countdownBar}
-              style={{ '--gap-horizontal': 'var(--adm-gap)' }}
-            >
-              <div className='text-center'>
-                <div><small>Kick off</small></div>
-                <Image src='/images/time_sponsor.webp' width={100} height='auto' />
-              </div>
-              <Countdown date={`2024-06-29T18:00:00`} renderer={timeRenderer} />
-            </Space>
-          </div>
-        </Affix>
+      </Affix>
       <div className={styles.btm}>
         <TabBar className={styles.tabbar}>
           {tabs.map(item => (
