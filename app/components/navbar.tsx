@@ -66,13 +66,13 @@ const Navbar = () => {
       className={styles.countdown}
       style={{ '--gap-horizontal': '0px' }}
     >
-      <span><strong>{zeroPad(days)}</strong><small>DAYS</small></span>
-      <span>:</span>
-      <span><strong>{zeroPad(hours)}</strong><small>HOURS</small></span>
-      <span>:</span>
-      <span><strong>{zeroPad(minutes)}</strong><small>MINUTES</small></span>
-      <span>:</span>
-      <span><strong>{zeroPad(seconds)}</strong><small>SECONDS</small></span>
+      <span><strong>{zeroPad(days)}</strong><small>DAY</small></span>
+      <span><strong>:</strong><small>&nbsp;</small></span>
+      <span><strong>{zeroPad(hours)}</strong><small>HOUR</small></span>
+      <span><strong>:</strong><small>&nbsp;</small></span>
+      <span><strong>{zeroPad(minutes)}</strong><small>MIN</small></span>
+      <span><strong>:</strong><small>&nbsp;</small></span>
+      <span><strong>{zeroPad(seconds)}</strong><small>SEC</small></span>
     </Space>
   )
 
