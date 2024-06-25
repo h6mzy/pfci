@@ -61,7 +61,8 @@ const Navbar = () => {
   return (
     <>
       <Head>
-        <meta name='theme-color' content='#000000' />
+        <meta name='theme-color' content='#000000' media='(prefers-color-scheme: light)' />
+        <meta name='theme-color' content='#000000' media='(prefers-color-scheme: dark)' />
       </Head>
       <Space
         block
