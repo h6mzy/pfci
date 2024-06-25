@@ -8,6 +8,7 @@ import { CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, TeamOut
 import { useEffect, useState } from 'react'
 import { UserAuth } from '../_lib/auth-context'
 import { CircleIcon, MenuIcon } from './icons'
+import Head from 'next/head'
 
 const Navbar = () => {
 
@@ -59,6 +60,9 @@ const Navbar = () => {
 
   return (
     <>
+      <Head>
+        <meta name='theme-color' content='#000000' />
+      </Head>
       <Space
         block
         justify='between'
