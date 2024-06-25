@@ -4,11 +4,10 @@ import { usePathname } from 'next/navigation'
 import { Button, Image, List, Popup, Space, TabBar } from 'antd-mobile'
 import Link from 'next/link'
 import styles from './navbar.module.sass'
-import { AppOutline, CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, TeamOutline, UserOutline } from 'antd-mobile-icons'
+import { CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, TeamOutline } from 'antd-mobile-icons'
 import { useEffect, useState } from 'react'
 import { UserAuth } from '../_lib/auth-context'
-import Countdown, { zeroPad } from 'react-countdown'
-import Affix from '@uiw/react-affix'
+import { CircleIcon, MenuIcon } from './icons'
 
 const Navbar = () => {
 
@@ -58,24 +57,6 @@ const Navbar = () => {
     },
   ]
 
-  const timeRenderer = ({ days, hours, minutes, seconds }: any) => (
-    <Space
-      block
-      justify='stretch'
-      align='center'
-      className={styles.countdown}
-      style={{ '--gap-horizontal': '0px' }}
-    >
-      <span><strong>{zeroPad(days)}</strong><small>DAY</small></span>
-      <span><strong>:</strong><small>&nbsp;</small></span>
-      <span><strong>{zeroPad(hours)}</strong><small>HOUR</small></span>
-      <span><strong>:</strong><small>&nbsp;</small></span>
-      <span><strong>{zeroPad(minutes)}</strong><small>MIN</small></span>
-      <span><strong>:</strong><small>&nbsp;</small></span>
-      <span><strong>{zeroPad(seconds)}</strong><small>SEC</small></span>
-    </Space>
-  )
-
   return (
     <>
       <Space
@@ -84,26 +65,14 @@ const Navbar = () => {
         align='center'
         className={`${styles.bar} ${styles.top}`}
       >
-        <AppOutline fontSize={24} onClick={() => setVisible(true)} />
+        <a onClick={() => setVisible(true)}>
+          <MenuIcon />
+        </a>
         <Logo />
-        <UserOutline fontSize={22} />
+        <a onClick={() => setVisible(true)}>
+          <CircleIcon />
+        </a>
       </Space>
-      <Affix offsetTop={0}>
-        <div className={styles.bar}>
-          <Space
-            block
-            align='center'
-            className={styles.countdownBar}
-            style={{ '--gap-horizontal': 'var(--adm-gap)' }}
-          >
-            <div className='text-center'>
-              <div><small>Kick off</small></div>
-              <Image src='/images/time_sponsor.webp' width={100} height='auto' />
-            </div>
-            <Countdown date={`2024-06-29T18:00:00`} renderer={timeRenderer} />
-          </Space>
-        </div>
-      </Affix>
       <div className={styles.btm}>
         <TabBar className={styles.tabbar}>
           {tabs.map(item => (
