@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import { Button, Image, List, Popup, Space, TabBar } from 'antd-mobile'
 import Link from 'next/link'
 import styles from './navbar.module.sass'
-import { CalendarOutline, CheckShieldOutline, CloseOutline, FileOutline, TeamOutline } from 'antd-mobile-icons'
+import { CalendarOutline, CloseOutline, GlobalOutline, StarOutline, TeamOutline } from 'antd-mobile-icons'
 import { useEffect, useState } from 'react'
 import { UserAuth } from '../_lib/auth-context'
 import { CircleIcon, MenuIcon } from './icons'
@@ -41,19 +41,19 @@ const Navbar = () => {
   const tabs = [
     {
       key: '/',
-      icon: <FileOutline />,
+      icon: <GlobalOutline fontSize={23} />,
     },
     {
       key: '/fixtures',
-      icon: <CalendarOutline />,
+      icon: <CalendarOutline fontSize={23} />,
     },
     {
-      key: '/club',
-      icon: <CheckShieldOutline />,
+      key: '/stats',
+      icon: <StarOutline fontSize={23} />,
     },
     {
       key: '/squad',
-      icon: <TeamOutline />,
+      icon: <TeamOutline fontSize={23} />,
     },
   ]
 
@@ -74,7 +74,7 @@ const Navbar = () => {
         </a>
       </Space>
       <div className={styles.btm}>
-        <TabBar className={styles.tabbar}>
+        <TabBar className={styles.tabbar} activeKey={activeKey}>
           {tabs.map(item => (
             <TabBar.Item
               key={item.key}
