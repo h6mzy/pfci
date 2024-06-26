@@ -1,34 +1,19 @@
 'use client'
 
-import { Image, List, Space } from 'antd-mobile'
+import { List, Space } from 'antd-mobile'
 import { players } from './_lib/players'
 import styles from './components/lineup.module.sass'
 import navStyles from './components/navbar.module.sass'
 import PlayerCard from './components/player-card'
 import Affix from '@uiw/react-affix'
-import Countdown, { zeroPad } from 'react-countdown'
 import { AppleWatchNike } from './components/icons'
+import dynamic from 'next/dynamic'
+
+const DynamicCountdown = dynamic(() => import('./components/countdown'), {
+  ssr: false,
+})
 
 export default function Home() {
-
-  const timeRenderer = ({ days, hours, minutes, seconds }: any) => (
-    <Space
-      block
-      justify='stretch'
-      align='center'
-      className={navStyles.countdown}
-      style={{ '--gap-horizontal': '0px' }}
-    >
-      <span><strong>{zeroPad(days)}</strong><small>DAY</small></span>
-      <span><strong>:</strong><small>&nbsp;</small></span>
-      <span><strong>{zeroPad(hours)}</strong><small>HOUR</small></span>
-      <span><strong>:</strong><small>&nbsp;</small></span>
-      <span><strong>{zeroPad(minutes)}</strong><small>MIN</small></span>
-      <span><strong>:</strong><small>&nbsp;</small></span>
-      <span><strong>{zeroPad(seconds)}</strong><small>SEC</small></span>
-    </Space>
-  )
-  
   return (
     <main>
       <Affix offsetTop={0}>
@@ -43,7 +28,7 @@ export default function Home() {
               <div><small>Kick off</small></div>
               <AppleWatchNike width='94px' />
             </div>
-            <Countdown date={`2024-06-29T18:00:00`} renderer={timeRenderer} />
+            <DynamicCountdown date={`2024-06-29T18:00:00`} />
           </Space>
         </div>
       </Affix>

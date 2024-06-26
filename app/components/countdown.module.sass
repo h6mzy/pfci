@@ -1,0 +1,19 @@
+.countdown
+  box-sizing: border-box
+  line-height: 1
+  text-align: center
+  strong
+    font-weight: bold
+    font-size: 1.6rem
+    display: block
+  small
+    font-size: .7rem
+    color: var(--adm-color-weak)
+  :global
+    .adm-space-item
+      flex: 1
+      display: flex
+      justify-content: center
+      align-items: center
+    .adm-space-item:nth-child(odd)
+      flex: 2
