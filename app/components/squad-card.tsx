@@ -21,21 +21,6 @@ const SquadCard = ({ player }: SquadCardProps) => {
             <div className={styles.name}>{name}</div>
             <Image width={30} src={`https://catamphetamine.gitlab.io/country-flag-icons/3x2/${country}.svg`} className={styles.country} />
           </div>
-          {/*
-          <Space
-            block
-            direction='vertical'
-            justify='between'
-            className={styles.details}
-            style={{ '--gap': '0px' }}
-          >
-            <Space align='center' style={{ '--gap-horizontal': 'var(--adm-gap-sm)' }}>
-              <Image width={30} src={`https://catamphetamine.gitlab.io/country-flag-icons/3x2/${country}.svg`} />
-              <div className='color-weak'>{role}</div>
-            </Space>
-          </Space>
-          <Tag color='primary' className={styles.tag}>CONFIRMED</Tag>
-          */}
         </div>
       </FixedAspectRatio>
     </div>

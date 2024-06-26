@@ -37,8 +37,6 @@ export default function Home() {
         style={{ 
           '--border-top': '0px',
           '--border-bottom': '0px',
-          //'--padding-left': '0px',
-          //'--padding-right': '0px',
         }}
       >
         {players.map((player, playerIndex) => {

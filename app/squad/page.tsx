@@ -8,7 +8,7 @@ export default function Squad() {
   return (
     <main>
       <div className='pad'>
-        <h1 className='text-center'>SQUAD</h1>
+        <h1 className='text-center'>The Squad</h1>
         <Grid columns={2} gap='var(--adm-gap-sm)'>
           {players.map((player, playerIndex) => (
             <Grid.Item key={playerIndex}>
