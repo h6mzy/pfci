@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main>
       <Affix offsetTop={0}>
-        <div className={navStyles.bar}>
+        <div className={navStyles.barGradient}>
           <Space
             block
             align='center'
