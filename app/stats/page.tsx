@@ -2,50 +2,46 @@
 
 import { Avatar, List, Space } from 'antd-mobile'
 import { players } from '../_lib/players'
-import { stats } from '../_lib/stats'
 import { StarFill, StarOutline } from 'antd-mobile-icons'
 import styles from './stats.module.sass'
+import { sessions } from '../_lib/sessions'
 
 export default function Stats() {
 
-  function last5Desc (record:number[]) {
-    return (record.slice(-5).reverse())
-  }
-
-  function getPlayerFromNumber (squad_number:number | undefined) {
-    return (players.find(p => p.squad_number === squad_number))
-  }
+  const withStats = players.reduce((acc, cur) => {
+    const appearances = sessions.map(s => s.players.includes(cur.squad_number))
+    const points =  calculatePoints(appearances)
+    const player:any = Object.assign(cur, {
+      appearances,
+      points,
+    })
+    acc.push(player)
+    return acc
+  }, [] as any)
   
-  const playersWithStats = stats.sort((a, b) => {
-    // get last 5 appearances sort by most recent
-    const aLast5 = last5Desc(a.record)
-    const bLast5 = last5Desc(b.record)
-    // 1 point for 1 appearance
-    let aPoints = aLast5.reduce((a, b) => a + b, 0)
-    let bPoints = bLast5.reduce((a, b) => a + b, 0)
-    // extra points for recent appearances
-    // bonus points for consecutive appearances
-    let aConsecutive = 0, bConsecutive = 0
+  function calculatePoints(appearances:boolean[]) {
+    // number of appearances in last 5
+    let total = appearances.filter(Boolean).length
+    let consecutive = 0
+    // extra points for consecutive
     for (let i = 0; i < 5; i++) {
       const points = 5 - i
-      if (aLast5[i] > 0) {
-        aPoints += points
-        if (aLast5[i-1] && aLast5[i-1] > 0) aConsecutive ++
-      }
-      if (bLast5[i] > 0) {
-        bPoints += points
-        if (bLast5[i-1] && bLast5[i-1] > 0) bConsecutive ++
+      if (appearances[i]) {
+        total += points
+        if (appearances[i-1]) consecutive ++
       }
     }
-    return bPoints - aPoints
-  })
+    return total + consecutive
+  }
 
-  const stars = (record: number[]) => (
-    record.map((val, valIndex) => (
-      val > 0
-      ? <StarFill key={valIndex} />
-      : <StarOutline key={valIndex} />
-    ))
+  function sortMostPoints(players:any) {
+    return players.sort((a:any, b:any) => b.points - a.points)
+  }
+
+  const stars = (appearances: boolean[]) => (
+    appearances.map((val, valIndex) => 
+      val ? <StarFill key={valIndex} /> : <StarOutline key={valIndex} />
+    )
   )
   
   return (
@@ -62,21 +58,17 @@ export default function Stats() {
           header={<div className='text-right'>Last 5 Sessions</div>}
           className={styles.stats}
         >
-          {playersWithStats.map((stat, statIndex) => {
-            const player = getPlayerFromNumber(stat.player)
-            const record = last5Desc(stat.record)
-            if (player) return (
-              <List.Item key={statIndex}>
-                <Space block justify='between' align='center'>
-                  <Space align='center'>
-                    <Avatar src={player.photo} fit='cover' style={{ '--border-radius': '50%' }} />
-                    <span>{player.name}</span>
-                  </Space>
-                  <span className='color-primary'>{stars(record)}</span>
+          {sortMostPoints(withStats).map((player:any, playerIndex:any) => 
+            <List.Item key={playerIndex}>
+              <Space block justify='between' align='center'>
+                <Space align='center'>
+                  <Avatar src={player.photo} fit='cover' />
+                  <span>{player.name}</span>
                 </Space>
-              </List.Item>
-            )
-          })}
+                <span className='color-primary'>{stars(player.appearances)}</span>
+              </Space>
+            </List.Item>
+          )}
         </List>
       </div>
     </main>

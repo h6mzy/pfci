@@ -44,7 +44,7 @@ const Navbar = () => {
       icon: <GlobalOutline fontSize={23} />,
     },
     {
-      key: '/fixtures',
+      key: '/sessions',
       icon: <CalendarOutline fontSize={23} />,
     },
     {

@@ -1,7 +1,7 @@
 export interface Player {
-  squad_number: number | undefined
+  squad_number: number
   name: string
-  country: string | undefined
+  country: string
   role: string
   position: string
   photo: string
