@@ -4,6 +4,7 @@ import { Card, List, Swiper } from 'antd-mobile'
 import { sessions } from '../_lib/sessions'
 import FixedAspectRatio from '../components/fixed-aspect-ratio'
 import { players } from '../_lib/players'
+import AffixedBar from '../components/affixed-bar'
 
 export default function Sessions() {
 
@@ -13,9 +14,17 @@ export default function Sessions() {
 
   return (
     <main>
+      <AffixedBar label='Next session' />
       <div className='pad'>
         <h1 className='text-center'>Sessions</h1>
-        <List>
+        <List
+          style={{ 
+            '--border-top': '0px',
+            '--border-bottom': '0px',
+            '--padding-left': '0px',
+            '--padding-right': '0px',
+          }}
+        >
           {sessions.map((session, sessionIndex) =>
             <List.Item key={sessionIndex}>
               <Swiper stuckAtBoundary={false} slideSize={30}>
