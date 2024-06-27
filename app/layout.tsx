@@ -27,6 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      <head>
+        <link rel='apple-touch-icon' href='/sitefiles/12345/678/90/apple-touch-icon.png' />
+      </head>
       <body className={montserrat.className}>
         <AuthContextProvider>
           <Navbar />
