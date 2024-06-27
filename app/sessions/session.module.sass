@@ -1,0 +1,35 @@
+.row
+  box-sizing: border-box
+  padding-right: var(--adm-gap)
+  &:not(:first-child)
+    border-top: 1px solid var(--adm-color-border)
+    padding-top: var(--adm-gap)
+  :global
+    .adm-space-item
+      flex: 1
+      &:last-child
+        flex: 3
+
+.number
+  font-size: 4rem
+  font-weight: bold
+  line-height: 48px
+  position: absolute
+  top: 0
+  right: var(--adm-gap-sm)
+  color: var(--adm-color-primary)
+  background: -webkit-linear-gradient(125deg, #0038a8, #ce1126)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.name
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 1
+  padding: var(--adm-gap) 6px 4px
+  background: linear-gradient(transparent, rgba(0, 0, 0, 1))
+
+.card
+  overflow: hidden
