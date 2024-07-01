@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@uiw/react-affix": "^4.22.3",
-    "antd-mobile": "^5.36.1",
+    "antd-mobile": "^5.37.0",
     "antd-mobile-icons": "^0.3.0",
     "country-flag-icons": "^1.5.12",
     "dayjs": "^1.11.11",
