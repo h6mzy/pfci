@@ -8,9 +8,7 @@ import styles from '../components/player.module.sass'
 export default function Squad() {
   return (
     <main>
-      <div className='pad-x'>
-        <h1 className='text-center'>The Squad</h1>
-      </div>
+      <h1 className='text-center'>The Squad</h1>
       <List
         className={styles.squad}
         style={{ 
