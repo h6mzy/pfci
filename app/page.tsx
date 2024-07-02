@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <AffixedBar date={`2024-07-12T09:00:00`} label='Kick off' />
-      <div className='pad'>
+      <div className={`pad ${styles.pitch}`}>
         <p className='color-primary text-center'>Confirmed Attendees</p>
         <Grid columns={3} gap='var(--adm-gap-sm)'>
           {players.map((player, playerIndex) => (
