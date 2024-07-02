@@ -44,3 +44,23 @@
   line-height: 1
   padding-top: var(--adm-gap-sm)
   text-align: center
+
+.tag
+  display: none
+
+.unavailable
+  .photo, .name
+    filter: grayscale(1) brightness(.45)
+  .tag
+    display: flex
+    justify-content: center
+    position: absolute
+    top: 50%
+    margin-top: -8.5px
+    left: 0
+    right: 0
+    z-index: 1
+    :global
+      .adm-tag
+        text-transform: uppercase
+        background-color: rgba(0, 0, 0, .5)
