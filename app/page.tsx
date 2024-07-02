@@ -12,7 +12,7 @@ export default function Home() {
     <main>
       <AffixedBar date={`2024-07-12T09:00:00`} label='Kick off' />
       <div className={`pad ${styles.pitch}`}>
-        <p className='color-primary text-center'>Confirmed Attendees</p>
+        <h2 className='text-center'>Players</h2>
         <Grid columns={3} gap='var(--adm-gap)' style={{ alignItems: 'center' }}>
           {players.map((player, playerIndex) => (
             <Grid.Item key={playerIndex}>
@@ -26,21 +26,6 @@ export default function Home() {
           ))}
         </Grid>
       </div>
-      <List
-        className={styles.lineup}
-        style={{ 
-          '--border-top': '0px',
-          '--border-bottom': '0px',
-        }}
-      >
-        {players.map((player, playerIndex) => {
-          return (
-            <List.Item key={playerIndex}>
-              <PlayerCard player={player} />
-            </List.Item>
-          )
-        })}
-      </List>
     </main>
   )
 }

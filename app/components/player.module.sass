@@ -1,6 +1,11 @@
+.squad
+  :global
+    .adm-list-item-content-main
+      padding: 0
+
 .card
+  background: linear-gradient(125deg, #0038a8, #ce1126)
   background: url('/images/player_card_bg.webp') center center / cover no-repeat var(--adm-color-black)
-  margin-bottom: var(--adm-gap-sm)
 
 .content
   position: relative
@@ -11,11 +16,16 @@
 .squad_number
   font-size: 10rem
   font-weight: bold
-  line-height: 109px
+  line-height: 1
   position: absolute
   top: 0
+  margin-top: -25px
   right: -.5rem
-  opacity: .25
+  //opacity: .25
+  color: var(--adm-color-white)
+  background: -webkit-linear-gradient(125deg, #0038a8, #ce1126)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
 
 .photo
   position: absolute
@@ -32,12 +42,3 @@
   font-weight: bold
   font-size: 2.5rem
   line-height: 1.4
-
-.tag
-  position: absolute
-  right: 0
-  bottom: 0
-  border: 0
-  border-radius: 0
-  padding: 6px 6px 6px 30px
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--adm-color-primary) 30px)

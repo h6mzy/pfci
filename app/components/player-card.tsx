@@ -1,6 +1,6 @@
 'use client'
 
-import { Image, Space, Tag } from 'antd-mobile'
+import { Image, Space } from 'antd-mobile'
 import styles from './player.module.sass'
 import { Player } from '../_lib/players'
 import FixedAspectRatio from './fixed-aspect-ratio'
@@ -30,7 +30,6 @@ const PlayerCard = ({ player }: PlayerCardProps) => {
               <div className='color-weak'>{role}</div>
             </Space>
           </Space>
-          <Tag color='primary' className={styles.tag}>CONFIRMED</Tag>
         </div>
       </FixedAspectRatio>
     </div>

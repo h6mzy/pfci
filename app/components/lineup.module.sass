@@ -4,8 +4,6 @@
 
 .content
   position: relative
-  //width: 100%
-  //height: 100%
   box-sizing: border-box
   margin-bottom: var(--adm-gap)
 
@@ -28,29 +26,25 @@
 
 .details
   box-sizing: border-box
-  //position: absolute
-  //left: 0
-  //right: 0
-  //bottom: 0
-  //background: linear-gradient(125deg, #0038a8, #ce1126)
   padding-top: var(--adm-gap-sm)
   display: flex
   justify-content: space-between
   align-items: center
 
 .name
-  //font-weight: bold
-  //font-size: 1.2rem
   line-height: 1
   padding-top: var(--adm-gap-sm)
   text-align: center
+  color: var(--adm-color-primary)
 
 .tag
   display: none
 
 .unavailable
-  .photo, .name
+  .photo, .name, .squad_number
     filter: grayscale(1) brightness(.45)
+  .squad_number
+    filter: grayscale(1) brightness(.75)
   .tag
     display: flex
     justify-content: center
