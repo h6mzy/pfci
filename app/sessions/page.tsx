@@ -16,7 +16,7 @@ export default function Sessions() {
 
   return (
     <main>
-      <AffixedBar label='Next session' />
+      <AffixedBar date={`2024-07-12T09:00:00`} label='Next session' />
       <h1 className='text-center'>Sessions</h1>
       <div>
         {sessions.map((session, sessionIndex) =>

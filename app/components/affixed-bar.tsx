@@ -9,10 +9,11 @@ const DynamicCountdown = dynamic(() => import('./countdown'), {
 })
 
 interface AffixBarProps {
-  label?: string
+  date: string,
+  label?: string,
 }
 
-const AffixedBar = ({ label = 'Kick off' }:AffixBarProps) => (
+const AffixedBar = ({ date, label = 'Kick off' }:AffixBarProps) => (
   <Affix offsetTop={0}>
     <div className={styles.barGradient}>
       <Space
@@ -25,7 +26,7 @@ const AffixedBar = ({ label = 'Kick off' }:AffixBarProps) => (
           <div><small>{label}</small></div>
           <AppleWatchNike width='94px' />
         </div>
-        <DynamicCountdown date={`2024-06-29T18:00:00`} />
+        <DynamicCountdown date={date} />
       </Space>
     </div>
   </Affix>

@@ -10,7 +10,7 @@ import SquadCard from './components/squad-card'
 export default function Home() {
   return (
     <main>
-      <AffixedBar label='Kick off' />
+      <AffixedBar date={`2024-07-12T09:00:00`} label='Kick off' />
       <div className='pad'>
         <p className='color-primary text-center'>Confirmed Attendees</p>
         <Grid columns={3} gap='var(--adm-gap-sm)'>
