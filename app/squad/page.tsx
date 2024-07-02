@@ -2,7 +2,7 @@
 
 import { Grid } from 'antd-mobile'
 import { players } from '../_lib/players'
-import SquadCard from '../components/squad-card'
+import SquadCard from '../components/lineup-card'
 
 export default function Squad() {
   return (
